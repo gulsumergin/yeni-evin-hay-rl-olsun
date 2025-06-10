@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hediye Kartınız 🎁</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.onload = function() {
+      const gift = localStorage.getItem("selectedGift") || "Sürpriz Hediye";
+      document.getElementById("gift-name").textContent = gift;
+      document.getElementById("gift-message").textContent = generateMessage(gift);
+      document.getElementById("roommate-joke").textContent = roommateJoke(gift);
+    };
+
+    function generateMessage(gift) {
+      switch(gift) {
+        case "Kendini Süpüren Halı":
+          return "Evet, artık halılar kendi işini yapıyor. Ama sadece gece 3'te. Rica ederim.";
+        case "Konuşmayan Komşu Seti":
+          return "Kutuda: kulak tıkacı, ve bir 'ben yokum' etiketi!";
+        case "Bitmeyen Kahve Kupası":
+          return "Sadece hayal gücünüzle doluyor... ve sonra yine boş kalıyor.";
+        default:
+          return "Hayal gücünüz hediyeniz oldu, iyi kullanın!";
+      }
+    }
+
+    function roommateJoke(gift) {
+      const jokes = {
+        "Kendini Süpüren Halı": "Ev arkadaşın bu halının altına bulaşıkları saklamasın yeter... 😅",
+        "Konuşmayan Komşu Seti": "Ev arkadaşına da bir tane vereceğiz... ama sessizce! 🤐",
+        "Bitmeyen Kahve Kupası": "Ev arkadaşın kahveye dadanırsa, ‘bitmeyen’ özelliği test edilecek demektir! ☕⚔️"
+      };
+      return jokes[gift] || "Ev arkadaşınla bu hediyeyi paylaşmak zorunda değilsin (o kadar kaba olma tabi ki her kuruşunu iste)? 😄";
+    }
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h1>🎁 Hediyeniz: <span id="gift-name"></span></h1>
+    <p id="gift-message" style="margin-top: 20px;"></p>
+    <hr style="margin: 20px 0;">
+    <p id="roommate-joke" style="font-style: italic; color: #555;"></p>
+    <p style="margin-top: 30px;">Yeni evinizde bol kahkahalı, tozsuz günler dileriz! 😄</p>
+
+    <div class="custom-gift-form">
+      <h2>📬 Gerçekten başka bir hediye ister misiniz?</h2>
+      <p>Hayalinizdeki hediyeyi yazın, bize <strong>e-posta ile</strong> gönderin. Belki okurum bilemiyorum İlkkan </p>
+      <form action="mailto:ummu1281@gmail.com" method="POST" enctype="text/plain">
+        <textarea name="hediye" placeholder="Ben aslında bir robot süpürge isterdim..." required></textarea>
+        <button type="submit" class="send-button">Hediyemi Gönder ✉️</button>
+      </form>
+    </div>
+
+    <a href="index.html" style="display: inline-block; margin-top: 20px; color: #00796b;">← Geri dön</a>
+  </div>
+</body>
+</html>
