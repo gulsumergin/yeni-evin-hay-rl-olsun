@@ -28,9 +28,8 @@ Key Contributions:
 Technologies Used:
 - HTML5
 - CSS
-
-JavaScript (DOM Manipulation, localStorage API)
+- JavaScript (DOM Manipulation, localStorage API)
+  
 Outcome:
-Delivered a lighthearted, shareable interactive experience.
-
-Practiced skills in state persistence between pages and dynamic content rendering.
+- Delivered a lighthearted, shareable interactive experience.
+- Practiced skills in state persistence between pages and dynamic content rendering.
